@@ -67,7 +67,7 @@ class EnvironmentTelemetryModule : private concurrency::OSThread,
   private:
     bool firstTime = 1;
     meshtastic_MeshPacket *lastMeasurementPacket;
-    uint32_t sendToPhoneIntervalMs = SECONDS_IN_MINUTE * 1000; // Send to phone every minute
+    uint32_t sendToPhoneIntervalMs = 1000; //SECONDS_IN_MINUTE * 1000; // Send to phone every minute !!! UPDATED TO 1000ms, once every second !!!
     uint32_t lastSentToPhone = 0;
 };
 

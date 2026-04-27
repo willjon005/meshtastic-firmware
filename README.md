@@ -1,3 +1,10 @@
+
+<h1>CUSTOM MESHTASTIC FIRMWARE FOR ACRE</h1>
+
+Edited Firmware for ACRE Project
+ - Removes Lower Limits from Environment and Position Telemetry Modules
+ - (WIP) Custom Telemetry module to implement poition and telemetry on same packet
+
 <div align="center" markdown="1">
 
 <img src=".github/meshtastic_logo.png" alt="Meshtastic Logo" width="80"/>

@@ -13,8 +13,9 @@
 #define TEN_SECONDS_MS 10 * 1000
 #define MAX_INTERVAL INT32_MAX // FIXME: INT32_MAX to avoid overflow issues with Apple clients but should be UINT32_MAX
 
-#define min_default_telemetry_interval_secs IF_ROUTER(ONE_DAY / 2, 30 * 60)
-#define default_gps_update_interval IF_ROUTER(ONE_DAY, 2 * 60)
+#define CUSTOM_MINIMUM_TELEMETRY_INTERVAL 5 // Custom Minimum Telemetry Interval - set to 5 second so that we can go as low as 5 seconds
+
+#define min_default_telemetry_interval_secs IF_ROUTER(ONE_DAY / 2, CUSTOM_MINIMUM_TELEMETRY_INTERVAL) // CUSTOM EDIT#define default_gps_update_interval IF_ROUTER(ONE_DAY, 2 * 60)
 #define default_telemetry_broadcast_interval_secs IF_ROUTER(ONE_DAY / 2, 60 * 60)
 #define default_broadcast_interval_secs IF_ROUTER(ONE_DAY / 2, 60 * 60)
 #define default_broadcast_smart_minimum_interval_secs 5 * 60

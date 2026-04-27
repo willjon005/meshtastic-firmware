@@ -310,9 +310,7 @@ int32_t EnvironmentTelemetryModule::runOnce()
         uint32_t lastTelemetry =
             transmitHistory ? transmitHistory->getLastSentToMeshMillis(TX_HISTORY_KEY_ENVIRONMENT_TELEMETRY) : 0;
         if (((lastTelemetry == 0) ||
-             !Throttle::isWithinTimespanMs(lastTelemetry, Default::getConfiguredOrDefaultMsScaled(
-                                                              moduleConfig.telemetry.environment_update_interval,
-                                                              default_telemetry_broadcast_interval_secs, numOnlineNodes))) &&
+            !Throttle::isWithinTimespanMs(lastTelemetry, (moduleConfig.telemetry.environment_update_interval * 1000))) &&
             airTime->isTxAllowedChannelUtil(config.device.role != meshtastic_Config_DeviceConfig_Role_SENSOR) &&
             airTime->isTxAllowedAirUtil()) {
             sendTelemetry();
